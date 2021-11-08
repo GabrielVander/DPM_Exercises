@@ -1,7 +1,6 @@
-import 'dart:io';
-
 import 'package:dpm_exercises/models/exercise.dart';
 import 'package:dpm_exercises/models/exercise_1.dart';
+import 'package:dpm_exercises/utils/input_utils.dart';
 
 const numberOfDashes = 70;
 const List<Exercise> exercises = [
@@ -26,38 +25,25 @@ Exercise? getExercise(int exerciseIdentifier) {
 }
 
 Exercise exerciseSelection() {
-  String? input;
   bool isExerciseChoiceValid = false;
 
   do {
-    print('Which one would you like to execute?\n');
-    input = stdin.readLineSync();
-    int? exerciseChoice = getValidatedExerciseChoice(input);
-    if (exerciseChoice != null) {
-      final Exercise? chosenExercise = getExercise(exerciseChoice);
+    int exerciseChoice = getNonEmptyIntegerInput(
+      displayMessage: 'Which one would you like to execute?\n',
+      onEmptyInputErrorMessage: 'You must choose an exercise to execute\n',
+      onUnparseableInputErrorMessage:
+          'That\'s not right... Please choose one of the displayed numbers\n',
+    );
+    final Exercise? chosenExercise = getExercise(exerciseChoice);
 
-      if (chosenExercise != null) {
-        isExerciseChoiceValid = true;
-        return chosenExercise;
-      }
-
-      print('Unknown choice. Please choose one of the displayed numbers');
+    if (chosenExercise != null) {
+      isExerciseChoiceValid = true;
+      return chosenExercise;
     }
+
+    print('Unknown choice. Please choose one of the displayed numbers\n');
   } while (!isExerciseChoiceValid);
   throw Exception('Something went wrong');
-}
-
-int? getValidatedExerciseChoice(String? input) {
-  if (input == null || input == '') {
-    print('You must choose an exercise to execute\n');
-    return null;
-  }
-  final int? parsedChoice = int.tryParse(input);
-  if (parsedChoice == null) {
-    print('That\'s not right... Please choose one of the displayed numbers\n');
-    return null;
-  }
-  return parsedChoice;
 }
 
 void exercisesDisplay() {
