@@ -13,11 +13,6 @@ void start() {
     print('');
     print('-' * numberOfDashes);
     mainMenu();
-    print('');
-    exercisesDisplay();
-    print('');
-    final Exercise chosenExercise = exerciseSelection();
-    chosenExercise.execute();
     print('-' * numberOfDashes);
   }
 }
@@ -74,4 +69,9 @@ void exercisesDisplay() {
 void mainMenu() {
   print('\t' * 7 + 'DPM - Exercises');
   print('There are ${exercises.length} exercises available to test:');
+  print('');
+  exercisesDisplay();
+  print('');
+  final Exercise chosenExercise = exerciseSelection();
+  chosenExercise.execute();
 }
