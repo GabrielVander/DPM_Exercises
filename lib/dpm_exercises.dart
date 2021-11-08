@@ -3,10 +3,13 @@ import 'package:dpm_exercises/models/exercise_1.dart';
 import 'package:dpm_exercises/models/exercise_2.dart';
 import 'package:dpm_exercises/utils/input_utils.dart';
 
+import 'models/exercise_3.dart';
+
 const numberOfDashes = 70;
 const List<Exercise> exercises = [
   Exercise1(),
   Exercise2(),
+  Exercise3(),
 ];
 
 void start() {
