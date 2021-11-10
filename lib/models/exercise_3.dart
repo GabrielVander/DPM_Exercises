@@ -11,7 +11,7 @@ class Exercise3 extends Exercise {
 
   @override
   void execute() {
-    _menu();
+    super.menu();
     print('');
     final int userInputAmount = getUserInputAmount();
     final List<int> userInputs = getUserInputs(userInputAmount);
@@ -30,11 +30,6 @@ class Exercise3 extends Exercise {
       }
       print('Please, choose a positive number\n');
     }
-  }
-
-  void _menu() {
-    print('$identifier - $title');
-    print(description);
   }
 
   List<int> getUserInputs(int userInputAmount) {

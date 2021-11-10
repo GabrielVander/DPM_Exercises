@@ -6,4 +6,9 @@ abstract class Exercise {
   const Exercise(this.identifier, this.title, this.description);
 
   void execute();
+
+  void menu() {
+    print('$identifier - $title');
+    print(description);
+  }
 }

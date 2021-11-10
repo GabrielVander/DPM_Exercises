@@ -14,7 +14,7 @@ class Exercise1 extends Exercise {
 
   @override
   void execute() {
-    _menu();
+    super.menu();
     print('');
     final String userName = _getUserName();
     int age = _getValidUserAge(userName);
@@ -27,11 +27,6 @@ class Exercise1 extends Exercise {
       displayMessage: 'What\'s your name?\n',
       onEmptyInputErrorMessage: 'Just say any name...  please\n',
     );
-  }
-
-  void _menu() {
-    print('$identifier - $title');
-    print(description);
   }
 
   int _getValidUserAge(String userName) {

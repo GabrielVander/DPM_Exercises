@@ -11,18 +11,13 @@ class Exercise2 extends Exercise {
 
   @override
   void execute() {
-    _menu();
+    super.menu();
     print('');
     int userNumber = getNonEmptyIntegerInput(
         displayMessage: 'Please choose a number',
         onEmptyInputErrorMessage: 'You have to type something\n',
         onUnparseableInputErrorMessage: 'That\'s not right...\n');
     result(userNumber);
-  }
-
-  void _menu() {
-    print('$identifier - $title');
-    print(description);
   }
 
   void result(int userNumber) {
