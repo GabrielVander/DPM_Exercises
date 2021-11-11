@@ -19,7 +19,7 @@ class Exercise1 extends Exercise {
     final String userName = _getUserName();
     int age = _getValidUserAge(userName);
     int remainingYears = _calculateRemainingYears(age);
-    result(userName, age, remainingYears);
+    _result(userName, age, remainingYears);
   }
 
   String _getUserName() {
@@ -49,7 +49,7 @@ class Exercise1 extends Exercise {
     return _targetAge - age;
   }
 
-  void result(String userName, int age, int remainingYears) {
+  void _result(String userName, int age, int remainingYears) {
     print('');
     if (remainingYears < 0) {
       print(

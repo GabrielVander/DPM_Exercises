@@ -17,10 +17,10 @@ class Exercise2 extends Exercise {
         displayMessage: 'Please choose a number',
         onEmptyInputErrorMessage: 'You have to type something\n',
         onUnparseableInputErrorMessage: 'That\'s not right...\n');
-    result(userNumber);
+    _result(userNumber);
   }
 
-  void result(int userNumber) {
+  void _result(int userNumber) {
     print('That\'s an ${userNumber.isEven ? 'Even' : 'Odd'} number!\n');
   }
 }

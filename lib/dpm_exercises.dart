@@ -21,12 +21,12 @@ void start() {
     print('');
     print('');
     print('-' * numberOfDashes);
-    mainMenu();
+    _mainMenu();
     print('-' * numberOfDashes);
   }
 }
 
-Exercise? getExercise(int exerciseIdentifier) {
+Exercise? _getExercise(int exerciseIdentifier) {
   if (exercises.any((exercise) => exercise.identifier == exerciseIdentifier)) {
     return exercises
         .singleWhere((exercise) => exercise.identifier == exerciseIdentifier);
@@ -34,7 +34,7 @@ Exercise? getExercise(int exerciseIdentifier) {
   return null;
 }
 
-Exercise exerciseSelection() {
+Exercise _exerciseSelection() {
   bool isExerciseChoiceValid = false;
 
   do {
@@ -44,7 +44,7 @@ Exercise exerciseSelection() {
       onUnparseableInputErrorMessage:
           'That\'s not right... Please choose one of the displayed numbers\n',
     );
-    final Exercise? chosenExercise = getExercise(exerciseChoice);
+    final Exercise? chosenExercise = _getExercise(exerciseChoice);
 
     if (chosenExercise != null) {
       isExerciseChoiceValid = true;
@@ -56,18 +56,18 @@ Exercise exerciseSelection() {
   throw Exception('Something went wrong');
 }
 
-void exercisesDisplay() {
+void _exercisesDisplay() {
   for (var exercise in exercises) {
     print('${exercise.identifier} - ${exercise.title}');
   }
 }
 
-void mainMenu() {
+void _mainMenu() {
   print('\t' * 7 + 'DPM - Exercises');
   print('There are ${exercises.length} exercises available to test:');
   print('');
-  exercisesDisplay();
+  _exercisesDisplay();
   print('');
-  final Exercise chosenExercise = exerciseSelection();
+  final Exercise chosenExercise = _exerciseSelection();
   chosenExercise.execute();
 }

@@ -15,11 +15,11 @@ class Exercise4 extends Exercise {
   void execute() {
     super.menu();
     print('');
-    final List<List<int>> lists = getUserInputs();
-    result(firstList: lists[0], secondList: lists[1]);
+    final List<List<int>> lists = _getUserInputs();
+    _result(firstList: lists[0], secondList: lists[1]);
   }
 
-  List<List<int>> getUserInputs() {
+  List<List<int>> _getUserInputs() {
     List<List<int>> lists = [];
 
     for (int i = 1; i <= _listAmount; i++) {
@@ -29,14 +29,14 @@ class Exercise4 extends Exercise {
         onUnparseableInputErrorMessage: 'That\'s not right...\n',
       );
 
-      List<int> builtList = buildList(listAmount);
+      List<int> builtList = _buildList(listAmount);
       lists.add(builtList);
     }
 
     return lists;
   }
 
-  List<int> buildList(int listAmount) {
+  List<int> _buildList(int listAmount) {
     List<int> elements = [];
 
     for (int i = 0; i < listAmount; i++) {
@@ -51,7 +51,7 @@ class Exercise4 extends Exercise {
     return elements;
   }
 
-  void result({required List<int> firstList, required List<int> secondList}) {
+  void _result({required List<int> firstList, required List<int> secondList}) {
     print('You\'ve inputted the following:');
     print('First list: $firstList');
     print('Second list: $secondList');

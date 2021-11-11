@@ -13,12 +13,12 @@ class Exercise3 extends Exercise {
   void execute() {
     super.menu();
     print('');
-    final int userInputAmount = getUserInputAmount();
-    final List<int> userInputs = getUserInputs(userInputAmount);
-    result(userInputs);
+    final int userInputAmount = _getUserInputAmount();
+    final List<int> userInputs = _getUserInputs(userInputAmount);
+    _result(userInputs);
   }
 
-  int getUserInputAmount() {
+  int _getUserInputAmount() {
     while (true) {
       final int input = getNonEmptyIntegerInput(
         displayMessage: 'Please tell how many numbers you\'d like to input',
@@ -32,7 +32,7 @@ class Exercise3 extends Exercise {
     }
   }
 
-  List<int> getUserInputs(int userInputAmount) {
+  List<int> _getUserInputs(int userInputAmount) {
     final List<int> inputs = [];
 
     for (int i = 0; i < userInputAmount; i++) {
@@ -47,7 +47,7 @@ class Exercise3 extends Exercise {
     return inputs;
   }
 
-  void result(List<int> userInputs) {
+  void _result(List<int> userInputs) {
     print('\nYou\'ve inputted the following numbers:');
     print(userInputs);
     final List<int> numbersHigherThanFive =
