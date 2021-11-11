@@ -5,6 +5,7 @@ import 'package:dpm_exercises/utils/input_utils.dart';
 
 import 'models/exercise_3.dart';
 import 'models/exercise_4.dart';
+import 'models/exercise_5.dart';
 
 const numberOfDashes = 70;
 const List<Exercise> exercises = [
@@ -12,6 +13,7 @@ const List<Exercise> exercises = [
   Exercise2(),
   Exercise3(),
   Exercise4(),
+  Exercise5(),
 ];
 
 void start() {
