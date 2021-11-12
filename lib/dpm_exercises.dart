@@ -1,6 +1,7 @@
 import 'package:dpm_exercises/models/exercise.dart';
 import 'package:dpm_exercises/models/exercise_1.dart';
 import 'package:dpm_exercises/models/exercise_2.dart';
+import 'package:dpm_exercises/models/exercise_6.dart';
 import 'package:dpm_exercises/utils/input_utils.dart';
 
 import 'models/exercise_3.dart';
@@ -14,6 +15,7 @@ const List<Exercise> exercises = [
   Exercise3(),
   Exercise4(),
   Exercise5(),
+  Exercise6(),
 ];
 
 void start() {
